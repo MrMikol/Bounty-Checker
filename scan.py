@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+page = 1
+url = "urls.txt"
+word = "lucky"
+
 def check(url: str, word: str, page) -> int:
     while page < 4:
         full_url = url + f"&page={page}"
@@ -19,14 +23,6 @@ def check(url: str, word: str, page) -> int:
         print(f"{word} appears {count} times.")
     print()
     return count
-page = 1
-url = "urls.txt"
-word = "lucky"
-
-#for page in page:
-
-    #count = check(url, word, page)
-    #print(f"{word} appears {count} times.")
 
 try:
     with open(url, "r") as file:
